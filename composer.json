@@ -1,0 +1,24 @@
+{
+    "name": "AvastBY/thumbs",
+    "description": "Thumbs for laravel",
+    "license": "MIT",
+    "version": "1.0.9",
+    "authors": [
+        {
+            "name": "AvastBY",
+            "email": "ak9594140@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AvastBY\\Thumbs\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-package-install": [
+            "AvastBY\\Thumbs\\Scripts::postInstall"
+        ]
+    }
+}
