@@ -29,8 +29,8 @@ class Scripts
             }
 
         }
-        if (!Schema::hasTable('thumbs1')) {
-            Schema::create('thumbs1', function (Blueprint $table) {
+        if (!Schema::hasTable('thumbs')) {
+            Schema::create('thumbs', function (Blueprint $table) {
                 $table->id();
                 $table->string('mark');
                 $table->integer('width')->default(0);
