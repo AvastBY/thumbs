@@ -1,9 +1,9 @@
 <?php
 
-namespace Ava\Thumbs\Http\Controllers;
+namespace Avast\Thumbs\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Ava\Models\Thumb;
+use Avast\Models\Thumb;
 use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;

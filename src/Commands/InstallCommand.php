@@ -1,6 +1,6 @@
 <?php
 
-namespace Ava\Thumbs\Commands;
+namespace Avast\Thumbs\Commands;
 
 
 use Illuminate\Console\Command;
@@ -13,9 +13,9 @@ use Carbon\Carbon;
 class InstallCommand extends Command
 {
 
-    protected $name = 'ava-thumbs:install';
+    protected $name = 'avast-thumbs:install';
 
-    protected $description = 'Install the Ava Thumbs package';
+    protected $description = 'Install the Avast Thumbs package';
 
 
     public function __construct()
@@ -25,7 +25,7 @@ class InstallCommand extends Command
 
     public function handle()
     {
-         $this->info('Ava Thumbs installing');
+         $this->info('Avast Thumbs installing');
         if (Schema::hasTable('thumbs')) {
             $this->info('Thumbs table already exists');
         }else{
@@ -52,7 +52,7 @@ class InstallCommand extends Command
                         'slug' => 'thumbs',
                         'display_name_singular' => 'Thumb',
                         'display_name_plural' => 'Thumbs',
-                        'model_name' => 'Ava\Thumbs\Models\Thumb',
+                        'model_name' => 'Avast\Thumbs\Models\Thumb',
                         'generate_permissions' => 1,
                         'server_side' => 0,
                         'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
@@ -116,7 +116,7 @@ class InstallCommand extends Command
 //            '--provider' => 'Prologue\Alerts\AlertsServiceProvider',
 //        ]);
 
-        $this->info('Ava Thumbs installed');
+        $this->info('Avast Thumbs installed');
 
         Artisan::call('vendor:publish --tag=ava-thumbs-routes');
         Artisan::call('cache:clear');

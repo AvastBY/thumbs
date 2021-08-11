@@ -1,6 +1,6 @@
 {
-    "name": "ava/thumbs",
-    "description": "Ava thumbs package",
+    "name": "avast/thumbs",
+    "description": "Avast thumbs package",
     "license": "MIT",
     "version": "1.0.10",
     "authors": [
@@ -13,13 +13,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Ava\\Thumbs\\": "src/"
+            "Avast\\Thumbs\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Ava\\Thumbs\\Providers\\ThumbsServiceProvider"
+                "Avast\\Thumbs\\Providers\\ThumbsServiceProvider"
             ]
         }
     }

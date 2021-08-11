@@ -1,9 +1,9 @@
 <?php
 
-namespace Ava\Thumbs\Providers;
+namespace Avast\Thumbs\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Ava\Thumbs\Commands;
+use Avast\Thumbs\Commands;
 
 class ThumbsServiceProvider extends ServiceProvider
 {
