@@ -3,7 +3,7 @@
 namespace Avast\Thumbs\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Avast\Models\Thumb;
+use Avast\Thumbs\Models\Thumb;
 use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
