@@ -59,6 +59,25 @@ class InstallCommand extends Command
                     ]
                 );
             }
+            $data_type = DB::table('data_types')->where('name', 'thumbs')->first();
+            if ($data_type && Schema::hasTable('data_rows')) {
+                if(!DB::table('data_rows')->where('data_type_id', $data_type->id)->first()){
+                    $data = [
+                        ['data_type_id' => $data_type->id, 'field' => 'id', 'type' => 'text', 'display_name' => 'id', 'required' => 1, 'browse' => 0, 'read' => 0, 'edit' => 0, 'add' => 0, 'delete' => 0, 'details' => '{}', 'order' => 1],
+                        ['data_type_id' => $data_type->id, 'field' => 'mark', 'type' => 'text', 'display_name' => 'Mark', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 2],
+                        ['data_type_id' => $data_type->id, 'field' => 'width', 'type' => 'number', 'display_name' => 'Width', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 3],
+                        ['data_type_id' => $data_type->id, 'field' => 'height', 'type' => 'number', 'display_name' => 'Height', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 4],
+                        ['data_type_id' => $data_type->id, 'field' => 'cover', 'type' => 'checkbox', 'display_name' => 'Cover', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 5],
+                        ['data_type_id' => $data_type->id, 'field' => 'fix_canvas', 'type' => 'checkbox', 'display_name' => 'Fix Canvas', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 6],
+                        ['data_type_id' => $data_type->id, 'field' => 'upsize', 'type' => 'checkbox', 'display_name' => 'Upsize', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 7],
+                        ['data_type_id' => $data_type->id, 'field' => 'quality', 'type' => 'number', 'display_name' => 'Quality', 'required' => 0, 'browse' => 1, 'read' => 1, 'edit' => 1, 'add' => 1, 'delete' => 1, 'details' => '{}', 'order' => 8],
+                        ['data_type_id' => $data_type->id, 'field' => 'created_at', 'type' => 'timestamp', 'display_name' => 'Created At', 'required' => 0, 'browse' => 0, 'read' => 0, 'edit' => 0, 'add' => 0, 'delete' => 0, 'details' => '{}', 'order' => 9],
+                        ['data_type_id' => $data_type->id, 'field' => 'updated_at', 'type' => 'timestamp', 'display_name' => 'Updated At', 'required' => 0, 'browse' => 0, 'read' => 0, 'edit' => 0, 'add' => 0, 'delete' => 0, 'details' => '{}', 'order' => 10],
+                    ];
+
+                    DB::table('data_rows')->insert($data);
+                }
+            }
         }
         if (Schema::hasTable('menu_items')) {
             if(!DB::table('menu_items')->where([['menu_id', 1], ['parent_id', 5],['title', 'Thumbs']])->first()){
