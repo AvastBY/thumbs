@@ -32,12 +32,12 @@ class InstallCommand extends Command
             Schema::create('thumbs', function (Blueprint $table) {
                 $table->id();
                 $table->string('mark')->unique();
-                $table->integer('width');
-                $table->integer('height');
-                $table->tinyInteger('cover');
-                $table->tinyInteger('fix_canvas');
-                $table->tinyInteger('upsize');
-                $table->integer('quality')->default(90);
+                $table->integer('width')->nullable();
+                $table->integer('height')->nullable();
+                $table->tinyInteger('cover')->nullable();
+                $table->tinyInteger('fix_canvas')->nullable();
+                $table->tinyInteger('upsize')->nullable();
+                $table->integer('quality')->nullable()->default(90);
                 $table->timestamps();
             });
 
