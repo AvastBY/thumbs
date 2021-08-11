@@ -3,7 +3,7 @@
 namespace Ava\Thumbs\Traits;
 
 use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\ThumbsController;
+use Ava\Thumbs\Http\Controllers\ThumbsController;
 use Illuminate\Support\Facades\File;
 
 trait Thumbs{

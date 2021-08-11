@@ -3,7 +3,7 @@
 namespace Ava\Thumbs\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Thumb;
+use Ava\Models\Thumb;
 use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
