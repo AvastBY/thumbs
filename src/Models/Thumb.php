@@ -1,6 +1,6 @@
 <?php
 
-namespace AvastBY\Thumbs\Models;
+namespace Ava\Thumbs\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

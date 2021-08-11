@@ -1,10 +1,9 @@
 <?php
 
-namespace AvastBY\Thumbs\Http\Controllers;
+namespace Ava\Thumbs\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use AvastBY\Thumbs\Models\Thumb;
+use App\Models\Thumb;
 use DB;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
@@ -73,7 +72,7 @@ class ThumbsController extends Controller
 		if(!$gallery) return false;
 		$img_path = false;
         foreach ($gallery as $key => $src) {
-            $hash = self::getHash($src.$table.$folder.$id.$mark);
+            $hash = ThumbsController::getHash($src.$table.$folder.$id.$mark);
             if($hash != $filename) continue;
             $img_path = $src;
             break;
@@ -110,7 +109,6 @@ class ThumbsController extends Controller
 				}
 			}
 
-
 			if ($thumbModel->canvas_color) {
 				$thumbnail = $thumbnail->resizeCanvas($tW, $tH, 'center', false, $thumbModel->canvas_color);
 			}else {
@@ -141,7 +139,7 @@ class ThumbsController extends Controller
     }
 
 	public static function getHash($str){
-		$hash = crypt(md5($str), env('THUMBS_SALT') ?? self::SALT);
+		$hash = crypt(md5($str), env('THUMBS_SALT') ?? ThumbsController::SALT);
 		$hash = str_replace(array('.','/',',','?',''), 'x', $hash);
 
 		return $hash;

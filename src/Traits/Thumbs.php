@@ -1,9 +1,9 @@
 <?php
 
-namespace AvastBY\Thumbs\Traits;
+namespace Ava\Thumbs\Traits;
 
 use Illuminate\Support\Facades\Storage;
-use AvastBY\Thumbs\Http\Controllers\ThumbsController;
+use App\Http\Controllers\ThumbsController;
 use Illuminate\Support\Facades\File;
 
 trait Thumbs{
