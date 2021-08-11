@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\ThumbsController;
+use Avast\Thumbs\Http\Controllers\ThumbsController;
 
 Route::get(Storage::disk('local')->url('').'_thumbs/{table}/{dir}/{id}/{field}/{mark}/{filename}.{ext}',[ThumbsController::class, 'generateThumb']);
 Route::get(Storage::disk('local')->url('').'_thumbs/{table}/{dir}/{id}/gallery/{field}/{mark}/{filename}.{ext}',[ThumbsController::class, 'generateGalleryThumb']);
