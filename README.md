@@ -15,3 +15,12 @@
 Create thumb via admin Tools->Thumbs
 
 Then use in blade {{ $model->thumb('`[image attribute]`', '`[thumb mark]`') }}
+
+For multiple images
+```html
+@if($it->gallery('gallery'))
+  @foreach($it->gallery('gallery') as $image)
+    <img src="{{ $it->galleryThumb($image, 'big') }}">
+  @endforeach
+@endif
+```
