@@ -1,6 +1,7 @@
 ## Install
 
 `composer require avast/thumbs`
+
 `php artisan avast-thumbs:install`
 
 ## Routes
@@ -12,4 +13,5 @@
 ## Usage
 
 Create thumb via admin Tools->Thumbs
+
 Then use in blade {{ $model->thumb('`[image attribute]`', '`[thumb mark]`') }}
