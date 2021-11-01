@@ -82,7 +82,7 @@ trait Thumbs{
 		return Storage::deleteDirectory('/public/_thumbs/placeholders');
 	}
 
-	public function gallery($mark = 'gallery'){
+	public function thumbGallery($mark = 'gallery'){
 		if(!$this->$mark) return false;
 
 		$gallery = json_decode($this->$mark);
