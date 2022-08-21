@@ -53,6 +53,7 @@ trait Thumbs{
 		$folder = intdiv($this->id,1000) + 1;
 
 		$ext = pathinfo($icon, PATHINFO_EXTENSION);
+		if($ext == 'jpeg') $ext = 'jpg';
 
 		$hash = ThumbsController::getHash($ext.$this->getTable().$folder.$this->id.$thumbMark);
 
@@ -109,9 +110,9 @@ trait Thumbs{
 
 		$icon = $imageObj->src;
 		$ext = pathinfo($icon, PATHINFO_EXTENSION);
+		if($ext == 'jpeg') $ext = 'jpg';
 
 		$hash = ThumbsController::getHash($imageObj->src.$this->getTable().$folder.$this->id.$thumbMark);
-
 		$no_ext_path = Storage::disk('local')->url('').'_thumbs/'.$this->getTable().'/'.$folder.'/'.$this->id.'/gallery/'.$imageObj->mark.'/'.$thumbMark.'/'.$hash;
 
 		$filename = $hash.'.'.$ext;

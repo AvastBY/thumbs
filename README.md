@@ -18,9 +18,9 @@ Then use in blade {{ $model->thumb('`[image attribute]`', '`[thumb mark]`') }}
 
 For multiple images
 ```blade
-@if($it->gallery('gallery'))
-  @foreach($it->gallery('gallery') as $image)
-    <img src="{{ $it->galleryThumb($image, 'big') }}">
+@if($it->thumbGallery('gallery'))
+  @foreach($it->thumbGallery('gallery') as $image)
+    <img src="{{ $it->thumb($image, 'big') }}">
   @endforeach
 @endif
 ```
