@@ -117,7 +117,7 @@ class ThumbsController extends Controller
 			if($thumbModel->upsize){
 				$thumbnail->resize(round($k * $image->width()), round($k * $image->height()));
 			}else{
-				if($image->width() > $tW && $image->height() > $tH){
+				if($image->width() > $tW || $image->height() > $tH){
 					$thumbnail->resize(round($k * $image->width()), round($k * $image->height()));
 				}
 			}
