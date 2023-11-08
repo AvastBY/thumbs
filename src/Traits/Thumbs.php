@@ -89,9 +89,16 @@ trait Thumbs{
 		$gallery = json_decode($this->$mark);
 
 		$galleryObjArr = array();
-		foreach ($gallery as $key => $src) {
+		foreach ($gallery as $key => $data) {
 			$obj = new \stdClass();
-			$obj->src = $src;
+			if(is_object($data) && !empty($data->src)){
+				foreach ((array) $data as $field => $value) {
+					$obj->$field = $value;
+				}
+			}else{
+				$obj->src = $data;
+			}
+			
 			$obj->mark = $mark;
 			$galleryObjArr[] = $obj;
 		}
