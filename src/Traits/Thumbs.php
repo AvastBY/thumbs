@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\File;
 
 trait Thumbs{
 
-	public static function boot(){
-		parent::boot();
-
+	public static function bootThumbs(){
 		self::updated(function ($model){
-			//очищаем тумбсы
+			$model->clearThumbs();
+		});
+		
+		self::deleting(function ($model){
 			$model->clearThumbs();
 		});
 	}
