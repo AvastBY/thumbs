@@ -51,7 +51,9 @@ class ThumbsController extends Controller
 		if(!$gallery) return abort(404);
 
 		$img_path = false;
-		foreach ($gallery as $key => $src) {
+		foreach ($gallery as $key => $it) {
+			$src = is_string($it) ? $it : $it->src;
+			
 			$hash = ThumbsController::getHash($src.$table.$folder.$id.$mark);
 
 			if($hash != $filename) continue;
@@ -68,7 +70,12 @@ class ThumbsController extends Controller
 		if($model_name && class_exists($model_class = config('voyager.models.namespace').$model_name ?? 'App\\Models\\'.$model_name)){
 			$model = $model_class::where('id', (int) $id)->first();
 			if(!$model) return abort(404);
-			$value = $model->$field;
+			
+			if(!empty($model->data) && $model->data->$field){
+				$value = $model->data->$field;
+			}else{
+				$value = $model->$field;
+			}
 		}else{
 			$value = DB::table($table)->where('id', (int) $id)->pluck($field)->first();
 		}
