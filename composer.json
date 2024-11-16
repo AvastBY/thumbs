@@ -2,13 +2,14 @@
     "name": "avast/thumbs",
     "description": "Avast thumbs package",
     "license": "MIT",
-    "version": "1.0.23",
+    "version": "1.0.25",
     "authors": [
         {
             "name": "AvastBY",
             "email": "ak9594140@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {},
     "autoload": {
         "psr-4": {
